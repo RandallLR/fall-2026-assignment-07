@@ -1,6 +1,6 @@
 import { getToken } from './auth';
 
-const BASE = '/api';
+const BASE = 'https://assignment-07-latest-opaq.onrender.com';
 
 export type Article = {
   articleId: number;

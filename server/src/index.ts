@@ -9,12 +9,19 @@ import {
 import { Article, NewUser } from './db/types.js';
 import { createUser, getUserById, getUserByUsername } from './dal/users.js';
 import { migrateToLatest } from './db/migrator.js';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+import cors from 'cors';
 
 export const app = express();
 
 const SECRET = process.env.JWT_SECRET || 'thisisasecret';
 
+app.use(cors());
 app.use(express.json());
+
+//app.use(express.json());
 
 app.get('/health', function (_, res) {
   res.json({ status: 'ok' });

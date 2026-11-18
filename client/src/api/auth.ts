@@ -1,4 +1,4 @@
-const BASE = '/api';
+const BASE = 'https://assignment-07-latest-opaq.onrender.com';
 
 // ── localStorage helpers ─────────────────────────────────────────────────────
 

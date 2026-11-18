@@ -7,7 +7,7 @@
     "start": "tsx src/index.ts",
     "dev": "tsx watch src/index.ts",
     "migrate": "tsx src/db/migrator.ts",
-    "build": "tsc",
+    "build": "cd ../client && npm install && npm run build && cd ../server && tsc && cp -r ../client/dist ./dist",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint . && tsc --noEmit",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^26.5.1",
@@ -38,9 +39,14 @@
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "kysely": "^0.29.6",
     "pg": "^8.23.0"
+  },
+  "allowScripts": {
+    "bcrypt@6.0.0": true,
+    "esbuild@0.28.2": true
   }
 }
